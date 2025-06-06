@@ -2,7 +2,7 @@ function SubjectAverageResult({ averageGrade }) {
   const getGradeInfo = (grade) => {
     const numGrade = parseFloat(grade);
     if (numGrade >= 97.5)
-      return { gwa: "1.00", remark: "Excellent", color: "green" };
+      return { gwa: "1.00", remark: "Excellent", color: "premium" };
     if (numGrade >= 94.5)
       return { gwa: "1.25", remark: "Very Good", color: "green" };
     if (numGrade >= 91.5)
@@ -25,6 +25,7 @@ function SubjectAverageResult({ averageGrade }) {
   const gradeInfo = getGradeInfo(averageGrade);
 
   const colorClasses = {
+    premium: "bg-emerald-100 text-emerald-800 border border-emerald-200",
     green: "bg-green-50 border-green-200 text-green-800",
     blue: "bg-blue-50 border-blue-200 text-blue-800",
     yellow: "bg-yellow-50 border-yellow-200 text-yellow-800",
