@@ -12,13 +12,17 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+}
+
 .wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  height: 100%;
-  margin: 20%;
+  gap: 20px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .full-width {
