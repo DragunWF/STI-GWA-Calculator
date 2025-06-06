@@ -93,7 +93,7 @@ function GradeTable() {
                     color: "yellow",
                   },
                   {
-                    range: "69.40 and below",
+                    range: "69.49 and below",
                     gwa: "5.00",
                     remark: "Failed",
                     color: "red",
