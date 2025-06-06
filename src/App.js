@@ -1,6 +1,5 @@
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react"; // For state management
-import "bootstrap/dist/css/bootstrap.min.css"; // Mandatory Bootstrap CSS
 import {
   Accordion,
   Alert,
