@@ -1,36 +1,53 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Accordion from "react-bootstrap/Accordion";
+import React, { useState } from "react"; // For state management
+import "bootstrap/dist/css/bootstrap.min.css"; // Mandatory Bootstrap CSS
+import {
+  Accordion,
+  Alert,
+  Button,
+  Card,
+  Col,
+  Form,
+  Row,
+  Table,
+} from "react-bootstrap";
 
 function App() {
   return (
-    <>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Accordion Item #1</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-    </>
+    <div className="wrapper">
+      <Calculator />
+    </div>
+  );
+}
+
+function Calculator() {
+  return (
+    <Card className="shadow-sm mb-4 full-width">
+      <Card.Header as="h5">Enter Your Grades</Card.Header>
+      <Card.Body>
+        <Form>
+          <Row className="mb-3">
+            <Col md={3}>
+              <Form.Label>Prelims (20%)</Form.Label>
+              <Form.Control type="number" min="0" max="100" />
+            </Col>
+            <Col md={3}>
+              <Form.Label>Midterms (20%)</Form.Label>
+              <Form.Control type="number" min="0" max="100" />
+            </Col>
+            <Col md={3}>
+              <Form.Label>Pre-Finals (20%)</Form.Label>
+              <Form.Control type="number" min="0" max="100" />
+            </Col>
+            <Col md={3}>
+              <Form.Label>Finals (40%)</Form.Label>
+              <Form.Control type="number" min="0" max="100" />
+            </Col>
+          </Row>
+          <Button variant="primary">Calculate Average GWA</Button>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }
 
