@@ -17,6 +17,7 @@ function App() {
 }
 
 function FloatingAcademicElements() {
+  const floatingElementCount = 50;
   const [elements, setElements] = useState([]);
 
   useEffect(() => {
@@ -42,8 +43,7 @@ function FloatingAcademicElements() {
     ];
     const initialElements = [];
 
-    // Create 25 floating elements
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < floatingElementCount; i++) {
       initialElements.push({
         id: i,
         symbol: symbols[Math.floor(Math.random() * symbols.length)],
