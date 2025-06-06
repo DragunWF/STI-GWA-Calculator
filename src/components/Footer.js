@@ -22,7 +22,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className="text-sm text-gray-500">© 2024-2025 • MIT License</div>
+          <div className="text-sm text-gray-500">© 2024-2025 • DragunWF</div>
         </div>
       </div>
 
