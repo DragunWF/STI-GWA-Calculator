@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  background: rgba(59, 130, 246, 0.7);
+  backdrop-filter: blur(2px);
+  color: white;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
