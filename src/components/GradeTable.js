@@ -42,7 +42,7 @@ function GradeTable() {
                     range: "97.50 - 100.00",
                     gwa: "1.00",
                     remark: "Excellent",
-                    color: "green",
+                    color: "premium",
                   },
                   {
                     range: "94.50 - 97.49",
@@ -109,7 +109,9 @@ function GradeTable() {
                     <td className="border border-gray-300 px-4 py-2">
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          row.color === "green"
+                          row.color === "premium"
+                            ? "bg-emerald-100 text-emerald-800 border border-emerald-200"
+                            : row.color === "green"
                             ? "bg-green-100 text-green-800"
                             : row.color === "blue"
                             ? "bg-blue-100 text-blue-800"
