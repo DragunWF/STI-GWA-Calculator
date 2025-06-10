@@ -2,7 +2,7 @@
 
 ## Description
 
-A **web-based tool** created for STI students to conveniently calculate their **General Weighted Average (GWA)** based on user-inputted grades for **Prelims**, **Midterms**, and **Finals**, following the **official STI Colleges grading system**.
+A **web-based tool** created for STI students to conveniently calculate their **General Weighted Average (GWA)** based on user-inputted grades for **Prelims**, **Midterms**, **Pre-Finals**, and **Finals**, following the **official STI Colleges grading system**.
 
 Developed as a **College Student Government project** for the benefit of the STI Ortigas-Cainta student community.
 
