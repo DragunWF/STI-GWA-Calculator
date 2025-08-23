@@ -7,17 +7,17 @@ function SubjectAverageResult({ averageGrade }) {
       return { gwa: "1.25", remark: "Very Good", color: "green" };
     if (numGrade >= 91.5)
       return { gwa: "1.50", remark: "Very Good", color: "green" };
-    if (numGrade >= 88.5)
+    if (numGrade >= 86.5)
       return { gwa: "1.75", remark: "Very Good", color: "green" };
-    if (numGrade >= 85.5)
-      return { gwa: "2.00", remark: "Satisfactory", color: "blue" };
     if (numGrade >= 81.5)
+      return { gwa: "2.00", remark: "Satisfactory", color: "blue" };
+    if (numGrade >= 76.0)
       return { gwa: "2.25", remark: "Satisfactory", color: "blue" };
-    if (numGrade >= 77.5)
+    if (numGrade >= 70.5)
       return { gwa: "2.50", remark: "Satisfactory", color: "blue" };
-    if (numGrade >= 73.5)
+    if (numGrade >= 65.0)
       return { gwa: "2.75", remark: "Fair", color: "yellow" };
-    if (numGrade >= 69.5)
+    if (numGrade >= 59.5)
       return { gwa: "3.00", remark: "Fair", color: "yellow" };
     return { gwa: "5.00", remark: "Failed", color: "red" };
   };
