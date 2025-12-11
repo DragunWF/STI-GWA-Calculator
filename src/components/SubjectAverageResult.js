@@ -1,25 +1,12 @@
+import GRADES from "../constants/grades";
+
 function SubjectAverageResult({ averageGrade }) {
   const getGradeInfo = (grade) => {
     const numGrade = parseFloat(grade);
-    if (numGrade >= 97.5)
-      return { gwa: "1.00", remark: "Excellent", color: "premium" };
-    if (numGrade >= 94.5)
-      return { gwa: "1.25", remark: "Very Good", color: "green" };
-    if (numGrade >= 91.5)
-      return { gwa: "1.50", remark: "Very Good", color: "green" };
-    if (numGrade >= 86.5)
-      return { gwa: "1.75", remark: "Very Good", color: "green" };
-    if (numGrade >= 81.5)
-      return { gwa: "2.00", remark: "Satisfactory", color: "blue" };
-    if (numGrade >= 76.0)
-      return { gwa: "2.25", remark: "Satisfactory", color: "blue" };
-    if (numGrade >= 70.5)
-      return { gwa: "2.50", remark: "Satisfactory", color: "blue" };
-    if (numGrade >= 65.0)
-      return { gwa: "2.75", remark: "Fair", color: "yellow" };
-    if (numGrade >= 59.5)
-      return { gwa: "3.00", remark: "Fair", color: "yellow" };
-    return { gwa: "5.00", remark: "Failed", color: "red" };
+    const gradeInfo = GRADES.find(
+      (g) => numGrade >= g.range[0] && numGrade <= g.range[1]
+    );
+    return gradeInfo || GRADES[GRADES.length - 1]; // Default to failed if not found
   };
 
   const gradeInfo = getGradeInfo(averageGrade);
