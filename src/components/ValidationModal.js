@@ -2,8 +2,8 @@ function ValidationModal({ show, title, message, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate-fade-in">
-      <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl max-w-md w-full mx-auto transform transition-all animate-scale-in">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 modal-backdrop">
+      <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl max-w-md w-full mx-auto transform transition-all modal-content">
         <div className="p-6 bg-red-50 border-b border-red-200 rounded-t-lg">
           <div className="flex items-center">
             <span className="text-2xl mr-3">⚠️</span>

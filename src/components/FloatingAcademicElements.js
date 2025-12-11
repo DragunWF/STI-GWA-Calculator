@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function FloatingAcademicElements() {
-  const floatingElementCount = 100;
+  const floatingElementCount = 75;
   const [elements, setElements] = useState([]);
 
   useEffect(() => {

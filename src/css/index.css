@@ -38,3 +38,63 @@ h1 {
 .full-width {
   width: 100%;
 }
+
+/* Grade Table Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.grade-table-open {
+  animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.grade-table-closed {
+  animation: slideUp 0.4s ease-in forwards;
+}
+
+/* Modal Animations */
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-backdrop {
+  animation: fadeInBackdrop 0.3s ease-in-out forwards;
+}
+
+.modal-content {
+  animation: scaleInModal 0.4s ease-in-out forwards;
+}

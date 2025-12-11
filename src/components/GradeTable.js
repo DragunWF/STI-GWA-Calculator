@@ -3,6 +3,19 @@ import GRADES from "../constants/grades";
 
 function GradeTable() {
   const [isOpen, setIsOpen] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleToggle = () => {
+    if (isOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsClosing(false);
+      }, 400);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   const formatGradeRange = (index) => {
     const grade = GRADES[index];
@@ -18,7 +31,7 @@ function GradeTable() {
   return (
     <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl mb-8 border border-white/20">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         className="w-full p-4 text-left font-semibold text-gray-800 hover:bg-white/50 transition-colors duration-200 flex justify-between items-center rounded-t-lg"
       >
         <span>Grade Conversion Table</span>
@@ -32,7 +45,11 @@ function GradeTable() {
       </button>
 
       {isOpen && (
-        <div className="p-4 border-t animate-fade-in">
+        <div
+          className={`p-4 border-t ${
+            isClosing ? "grade-table-closed" : "grade-table-open"
+          }`}
+        >
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
