@@ -9,10 +9,10 @@ function GradeTable() {
     const isLast = index === GRADES.length - 1;
 
     if (isLast) {
-      return `${grade.range[1]} and below`;
+      return `${grade.range[1].toFixed(2)} and below`;
     }
 
-    return `${grade.range[0]} - ${grade.range[1]}`;
+    return `${grade.range[0].toFixed(2)} - ${grade.range[1].toFixed(2)}`;
   };
 
   return (
