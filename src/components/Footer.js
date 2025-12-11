@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="relative bg-gradient-to-r from-slate-50 to-gray-100 border-t border-gray-200">
+    <footer className="relative bg-gradient-to-r from-slate-50 to-gray-100 border-t border-gray-200 rounded-xl">
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="text-center space-y-4">
           {/* Main content */}
@@ -22,7 +22,17 @@ function Footer() {
             </p>
           </div>
 
-          <div className="text-sm text-gray-500">© 2024-2025 • DragunWF</div>
+          <div className="text-sm text-gray-500">
+            © 2024-2025 •{" "}
+            <a
+              href="https://github.com/DragunWF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-800 transition-colors duration-200 underline decoration-1 underline-offset-2"
+            >
+              DragunWF
+            </a>
+          </div>
         </div>
       </div>
 
