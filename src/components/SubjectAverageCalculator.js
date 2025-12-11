@@ -65,6 +65,35 @@ function SubjectAverageCalculator() {
     setAverageGrade(null);
   }
 
+  function handleGradeInput(value) {
+    // Allow empty string for clearing the field
+    if (value === "") {
+      return "";
+    }
+
+    // Only allow numbers and one decimal point
+    const numericValue = value.replace(/[^\d.]/g, "");
+
+    // Prevent multiple decimal points
+    const parts = numericValue.split(".");
+    if (parts.length > 2) {
+      return parts[0] + "." + parts[1];
+    }
+
+    // Convert to number and check range
+    const numberValue = parseFloat(numericValue);
+    if (isNaN(numberValue)) {
+      return "";
+    }
+
+    // Restrict to 0-100 range
+    if (numberValue > 100) {
+      return "100";
+    }
+
+    return numericValue;
+  }
+
   return (
     <>
       <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl p-6 mb-8 border border-white/20">
@@ -78,12 +107,12 @@ function SubjectAverageCalculator() {
               Prelims (20%)
             </label>
             <input
-              type="number"
-              min="0"
-              max="100"
-              step="0.01"
+              type="text"
+              inputMode="decimal"
               value={prelimsGrade}
-              onChange={(e) => setPrelimsGrade(e.target.value)}
+              onChange={(e) =>
+                setPrelimsGrade(handleGradeInput(e.target.value))
+              }
               placeholder="Enter grade"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80"
             />
@@ -94,12 +123,12 @@ function SubjectAverageCalculator() {
               Midterms (20%)
             </label>
             <input
-              type="number"
-              min="0"
-              max="100"
-              step="0.01"
+              type="text"
+              inputMode="decimal"
               value={midtermsGrade}
-              onChange={(e) => setMidtermsGrade(e.target.value)}
+              onChange={(e) =>
+                setMidtermsGrade(handleGradeInput(e.target.value))
+              }
               placeholder="Enter grade"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80"
             />
@@ -110,12 +139,12 @@ function SubjectAverageCalculator() {
               Pre-Finals (20%)
             </label>
             <input
-              type="number"
-              min="0"
-              max="100"
-              step="0.01"
+              type="text"
+              inputMode="decimal"
               value={prefinalsGrade}
-              onChange={(e) => setPrefinalsGrade(e.target.value)}
+              onChange={(e) =>
+                setPrefinalsGrade(handleGradeInput(e.target.value))
+              }
               placeholder="Enter grade"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80"
             />
@@ -126,12 +155,10 @@ function SubjectAverageCalculator() {
               Finals (40%)
             </label>
             <input
-              type="number"
-              min="0"
-              max="100"
-              step="0.01"
+              type="text"
+              inputMode="decimal"
               value={finalsGrade}
-              onChange={(e) => setFinalsGrade(e.target.value)}
+              onChange={(e) => setFinalsGrade(handleGradeInput(e.target.value))}
               placeholder="Enter grade"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80"
             />
