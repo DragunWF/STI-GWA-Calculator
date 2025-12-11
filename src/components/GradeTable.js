@@ -3,18 +3,9 @@ import GRADES from "../constants/grades";
 
 function GradeTable() {
   const [isOpen, setIsOpen] = useState(true);
-  const [isClosing, setIsClosing] = useState(false);
 
   const handleToggle = () => {
-    if (isOpen) {
-      setIsClosing(true);
-      setTimeout(() => {
-        setIsOpen(false);
-        setIsClosing(false);
-      }, 400);
-    } else {
-      setIsOpen(true);
-    }
+    setIsOpen(!isOpen);
   };
 
   const formatGradeRange = (index) => {
@@ -45,11 +36,7 @@ function GradeTable() {
       </button>
 
       {isOpen && (
-        <div
-          className={`p-4 border-t ${
-            isClosing ? "grade-table-closed" : "grade-table-open"
-          }`}
-        >
+        <div className="p-4 border-t grade-table-open">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
